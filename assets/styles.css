@@ -4,6 +4,7 @@ html {
   font-family: Arial;
   background-color: rgb(29, 27, 27);
   scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 header {
   border-bottom: 1px solid #eee;
@@ -14,9 +15,11 @@ header {
   width: 100%; /* Full width */
   z-index: 100;
 }
+
 .burger-wrapper {
-cursor: pointer;
+  cursor: pointer;
 }
+
 #meny {
   background: #333;
   width: 20rem;
@@ -207,7 +210,7 @@ background-color: #fff;
 
 .about-paragraph {
   padding: 5px;
-  text-align: center;
+  text-align: justify;
   color: #fff;
   line-height: 120%;
   font-size: 20px;
@@ -220,7 +223,8 @@ background-color: #fff;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 48px;
+  scroll-margin-top: 26px;
 }
 
 .p-heading {
@@ -319,8 +323,8 @@ background-color: #fff;
 }
 
 .skills-icon {
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   margin: 20px;
 }
 
@@ -361,7 +365,7 @@ background-color: #fff;
 }
 
 .contact-form {
-  width: 30%;
+  width: 45%;
 }
 
 
@@ -384,15 +388,20 @@ background-color: #fff;
 }
 
 #button {
-  width: auto;
-  height: 40px;
+  width: 33%;
+  height: 50px;
   border-radius: 5px;
   border: none;
   background-color: rgb(210, 113, 4);
   color: #fff;
   font-weight: bold;
   cursor: pointer;
-  margin: 0 auto;
+  font-size: 1rem;
+}
+
+#btn-cntr {
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -411,6 +420,12 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#email-success {
+  color: green;
+  font-size: 20px;
+
 }
 
 /* footer styles orange background */

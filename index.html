@@ -11,7 +11,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <script src="./script.js" defer></script>
     <script>history.scrollRestoration = "manual"</script>
-    <title>Document</title>
+    <title>Shane Howe | Portfolio</title>
+    <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // Public Key
+        (function () {
+        emailjs.init("88qwyOvR5gc1IuQ8P");
+        })();
+    </script>
 </head>
 <body>
     <header>
@@ -24,9 +33,9 @@
         </label>
       <nav id="meny">
         <a href="#about" class="nav-item">About me</a>
-        <a href="#" class="nav-item">Projects</a>
-        <a href="#" class="nav-item">Skills</a>
-        <a href="#" class="nav-item">Get in Touch</a>
+        <a href="#project" class="nav-item">Projects</a>
+        <a href="#skills" class="nav-item">Skills</a>
+        <a href="#get-in-touch" class="nav-item">Get in Touch</a>
       </nav>
     </header>
     <section class="hero">
@@ -44,11 +53,11 @@
                 <h1>About me</h1>
             </div>
             <div class="about-paragraph">
-                <p>Hey there, so as you might have guessed due to the in your face heading, my name is in fact Shane Howe. I am an aspiring software engineer hailing from Co. Kerry in Ireland. Currently I am studying Computing with Software Development in Munster Technological University (MTU), Kerry.<br><br>What made me want to go down this career path? Well as cliche as it sounds, it started with the classic "Hello, World!" program. I had some free time and decided you know what, I am going to learn how to code. I jumped on my laptop rearching where I can learn for free. I stumbled across <a>Codecademy's</a> learn Python3 course. Now bear in mind I had no idea what code even looked like. I loved it. Time passed and I heard about <a>CS50x Harvard's introduction to Computer Science.</a> Best decision I ever made was taking that course. It really set in stone that this was the career path for me. Since then I have gone onto learn Python (more in depth), JavaScript and of course HTML & CSS. Currently dipping my toes into C++.<span id="hide-smaller-screen"><br><br>Outside of all the techy stuff, I am a pretty normal (so I think) guy. I enjoy going to the gym, cooking, reading and socialising. Well if you made it this far, thank you for reading!</span></p>
+                <p>Hey there, so as you might have guessed due to the in your face heading, my name is in fact Shane Howe. I am an aspiring software engineer hailing from Co. Kerry in Ireland. I am studying Computing with Software Development in Munster Technological University (MTU), Kerry.<br><br>What made me want to go down this career path? Well as cliche as it sounds, it started with the classic "Hello, World!" program. I had some free time and decided you know what, I am going to learn how to code. I jumped on my laptop rearching where I can learn for free. I stumbled across <a>Codecademy's</a> learn Python3 course. Now bear in mind I had no idea what code even looked like. I loved it. Time passed and I heard about <a>CS50x Harvard's introduction to Computer Science.</a> Best decision I ever made was taking that course. It really set in stone that this was the career path for me. Since then I have gone onto learn Python (more in depth), JavaScript and of course HTML & CSS. Currently dipping my toes into C++.<span id="hide-smaller-screen"><br><br>Outside of all the techy stuff, I am a pretty normal (so I think) guy. I enjoy going to the gym, cooking, reading and socialising. Well if you made it this far, thank you for reading!</span></p>
             </div>       
         </div>
     </section>
-    <div data-aos="fade-up" class="p-heading-container">
+    <div id="project" data-aos="fade-up" class="p-heading-container">
         <h1 class="p-heading">Projects</h1>
     </div>
     <section class="projects">
@@ -86,7 +95,8 @@
                 <a target="_blank" href="https://github.com/shanehowe/twitter-bot"><i class="fa">&#xf09b;</i></a>
             </div>
     </section>
-    <section class="skills">
+
+    <section id="skills" class="skills">
         <!-- Porgramming languages, frameworks -->
         <div data-aos="fade-up" class="skills-heading">
             <h1>Skills</h1>
@@ -106,28 +116,29 @@
             </div>
         </div>
     </section>
-    <section class="contact">
+    <section id="get-in-touch" class="contact">
         <!-- Contact form -->
         <div data-aos="fade-up" class="contact-heading">
             <h1>Get in touch</h1>
         </div>
         <div class="contact-container">
-            <form>
+            <form id="form-send">
                 <div class="contact-form">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your name..">
+                    <input required type="text" id="name" name="name" placeholder="Your name..">
                 </div>
                 <div class="contact-form">
                     <label for="email">Email</label>
-                    <input type="text" id="email" name="email" placeholder="Your email..">
+                    <input type="text" id="email" name="email" placeholder="Your email.. only if you want me to reply back.">
                 </div>
                 <div class="contact-form">
-                    <label for="subject">Subject</label>
-                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                    <label for="subject">Message</label>
+                    <textarea required id="message" name="subject" placeholder="Write something.." style="height:200px"></textarea>
                 </div>
-                <div class="contact-form">
-                    <input id="button" type="submit" value="Submit" >
+                <div class="contact-form" id="btn-cntr">
+                    <button id="button" onclick="sendEmail">Submit</button>
                 </div>
+                <p id="email-success"></p>
             </form>
         </div>
     </section>
@@ -146,7 +157,7 @@
     <div class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h1>Enoying that? 🤔</h1>
+            <h1>It's fun right 😁</h1>
         </div>
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

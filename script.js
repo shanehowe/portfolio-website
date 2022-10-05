@@ -52,7 +52,7 @@ const nameAnimation =  () => {
 
 // Welcome animation
 const welcomeToFill = document.getElementById("welcome-animation");
-const welcomeMessage = "Welcome to my portfolio.";
+const welcomeMessage = "Welcome to my website.";
 let k = 0;
 
 const welcomeAnimation = () => {
@@ -68,3 +68,39 @@ const welcomeAnimation = () => {
 helloAnimation();
 setTimeout(() => nameAnimation(), 1200);
 setTimeout(() => welcomeAnimation(), 2400);
+
+// Get in touch email function
+
+const sendEmail = (e) => {
+    e.preventDefault();
+
+    const emailSuccessMessage = document.getElementById("email-success");
+
+    const params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+    }
+
+    const serviceID = "service_btgo2zi";
+    const templateID = "template_ezh0wsr";
+
+    emailjs
+        .send(serviceID, templateID, params)
+        .then(res => {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+            console.log(res);
+        })
+        .catch(err => console.log(err))
+        
+        emailSuccessMessage.innerHTML = "Your message has been sent! Thank you :)";
+        setTimeout(() => {
+            emailSuccessMessage.innerHTML = ""
+        }, 10000)
+}
+
+const form = document.getElementById("form-send");
+
+form.addEventListener("submit", sendEmail);
