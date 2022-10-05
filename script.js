@@ -82,6 +82,7 @@ const sendEmail = (e) => {
         message: document.getElementById("message").value,
     }
 
+    // PUBLIC KEYS
     const serviceID = "service_btgo2zi";
     const templateID = "template_ezh0wsr";
 
