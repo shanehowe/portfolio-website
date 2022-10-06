@@ -88,15 +88,14 @@ const sendEmail = (e) => {
 
     emailjs
         .send(serviceID, templateID, params)
-        .then(res => {
+        .then(() => {
             document.getElementById("name").value = "";
             document.getElementById("email").value = "";
             document.getElementById("message").value = "";
-            console.log(res);
+            emailSuccessMessage.innerHTML = "Your message has been sent! Thank you :)";
         })
         .catch(err => console.log(err))
         
-        emailSuccessMessage.innerHTML = "Your message has been sent! Thank you :)";
         setTimeout(() => {
             emailSuccessMessage.innerHTML = ""
         }, 10000)
