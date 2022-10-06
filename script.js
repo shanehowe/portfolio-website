@@ -103,5 +103,14 @@ const sendEmail = (e) => {
 }
 
 const form = document.getElementById("form-send");
-
 form.addEventListener("submit", sendEmail);
+
+const closeMenu = (e) => {
+    if (document.getElementById("menyAvPaa").checked) {
+        if (e.target.nodeName == "A") {
+            document.getElementById("menyAvPaa").checked = false;
+        }
+    }
+}
+
+document.addEventListener("click", closeMenu);
