@@ -1,3 +1,6 @@
+
+history.scrollRestoration="manual";
+
 // Create pop up for when hamburger is clicked multiple times 
 const hamburger = document.getElementById("burger");
 const span = document.getElementsByClassName("close")[0];
@@ -70,7 +73,9 @@ setTimeout(() => nameAnimation(), 1200);
 setTimeout(() => welcomeAnimation(), 2400);
 
 // Get in touch email function
-
+(function () {
+    emailjs.init("88qwyOvR5gc1IuQ8P");
+    })();
 const sendEmail = (e) => {
     e.preventDefault();
 
@@ -113,3 +118,4 @@ const closeMenu = (e) => {
 }
 
 document.addEventListener("click", closeMenu);
+
