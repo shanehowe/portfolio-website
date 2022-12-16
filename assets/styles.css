@@ -483,11 +483,6 @@ form {
 
 }
 
-@media screen and (min-width: 825px) {
-  #hide-smaller-screen {
-    display: block;
-  }
-}
 
 /* Media queries for projects section on larger screens */
 
